@@ -19,7 +19,7 @@ a{
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.row, .center{
+.row .center{
   align-items: center;
 }
 .col-l{
@@ -38,6 +38,22 @@ a{
   
 }
 
+img.small{
+  max-height: 8rem;
+  width:100%;
+}
+.card{
+  background-color: #fff;
+  padding: 1rem;
+  margin: 0.5rem;
+}
+button{
+  padding: 0.3rem;
+  border:0.rem #333 solid;
+  background-color: #f0c040;
+  width: 100%;
+  cursor: pointer;
+}
 .header_block{
   background-color: #eee;
   padding: 1rem;
