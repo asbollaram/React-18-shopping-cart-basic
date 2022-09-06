@@ -67,3 +67,22 @@ button.badge{
   color: white;
   cursor: pointer;
 }
+button.add{
+  padding: 0.3rem;
+  border:0.rem #333 solid;
+  background-color:#f0c040;
+  width: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+button.remove{
+  padding: 0.3rem;
+  border:0.rem #333 solid;
+  background-color:#f7560b;
+  width: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+.p-1{
+  padding: 1rem;
+}
