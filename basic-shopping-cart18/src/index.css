@@ -59,3 +59,11 @@ button{
   padding: 1rem;
   margin: 0.5rem;
 }
+button.badge{
+  padding: 0.3rem;
+  border:0.rem #333 solid;
+  background-color:#333;
+  width: 1.5rem;
+  color: white;
+  cursor: pointer;
+}

@@ -1,6 +1,6 @@
 # basic react-18 shopping cart website
 
-#points
+##points
 1. create react app
     1. npx create-react-app 
     2. remove extra filese
@@ -13,3 +13,5 @@
 4. create product componet
     1. create product divs
     2. pass props to product component
+5. Implement cart
+    1. add and remove items from the cart
