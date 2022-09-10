@@ -1,4 +1,4 @@
-import {useState,useEffect} from "react";
+import {useState,useEffect, useTransition, useDeferredValue} from "react";
 import Basket from "./components/Basket";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -47,24 +47,34 @@ function App(){
       localStorage.setItem('cartItems', JSON.stringify(newCartItems));
     }
   };
-useEffect(() => {
-  setCartItems(
-    localStorage.getItem('cartItems')
-    ? JSON.parse(localStorage.getItem('cartItems')):[]
-  );
-  
-}, [])
-  return <div>
-    <Header countCartItems={cartItems.length} />
+
+  // useTransition hooks used for loding..
+  const [isPending, startTransition] = useTransition();
+
+  useEffect(() => {
+    startTransition(() =>{
+      setCartItems(
+        localStorage.getItem('cartItems')
+        ? JSON.parse(localStorage.getItem('cartItems')):[]
+      );
+    })  
+    
+  }, []
+  )
+  //useDeferredValue hook used 
+
+  const cartItemsCount = useDeferredValue(cartItems.length);
+  return isPending ? (
+    <div style={{color:'red'}}>Loading...</div>) 
+    :(<div>
+    <Header countCartItems={cartItemsCount} />
 
       <div className="row">
         <Main cartItems={cartItems} products={products} onAdd={onAdd} onRemove={onRemove}/>
         <Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>
       </div>
-
-    {/* footer start */}
     <Footer/>
-  </div>;
+  </div>)
 }
 
 export default App;
