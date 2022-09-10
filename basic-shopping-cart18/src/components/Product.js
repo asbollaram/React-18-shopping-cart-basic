@@ -5,7 +5,7 @@ export default function Product(props) {
         <div className="card">
             <img className="small" src={product.image} alt={product.name} />
             <h3>{product.name}</h3>
-            <div>${product.price}</div>
+            <div>$ {product.price}</div>
         <div >
         
         {item ? (<div>

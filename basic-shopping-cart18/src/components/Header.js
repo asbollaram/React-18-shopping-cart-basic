@@ -6,7 +6,8 @@ export default function Header(props){
     <div>
         <a href="/#"><h2>Sopping Cort</h2></a>
     </div>
-    <div >
+    
+    <div>
         <a href="/#">Cart
         {countCartItems ? (
             <button className="badge">{countCartItems}</button>

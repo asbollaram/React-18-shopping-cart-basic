@@ -1,5 +1,6 @@
 import {useState} from "react";
 import Basket from "./components/Basket";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import data from "./data";
@@ -46,10 +47,14 @@ function App(){
 
   return <div>
     <Header countCartItems={cartItems.length} />
+    
       <div className="row">
         <Main cartItems={cartItems} products={products} onAdd={onAdd} onRemove={onRemove}/>
         <Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>
       </div>
+
+    {/* footer start */}
+    <Footer/>
   </div>;
 }
 
