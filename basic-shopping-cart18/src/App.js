@@ -66,15 +66,20 @@ function App(){
   const cartItemsCount = useDeferredValue(cartItems.length);
   return isPending ? (
     <div style={{color:'red'}}>Loading...</div>) 
-    :(<div>
-    <Header countCartItems={cartItemsCount} />
+    :(
+    <div>
+      <Header countCartItems={cartItemsCount} />
+      <section className="container my-5">
+          <div className="row">
+          <h2 className="display-3">All Product List</h2>
+            <Main cartItems={cartItems} products={products} onAdd={onAdd} onRemove={onRemove}/>
+            <Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>
+          </div>
+        </section>
+      <Footer/>
 
-      <div className="row">
-        <Main cartItems={cartItems} products={products} onAdd={onAdd} onRemove={onRemove}/>
-        <Basket cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>
-      </div>
-    <Footer/>
-  </div>)
+    </div>
+  )
 }
 
 export default App;
